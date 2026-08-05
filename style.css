@@ -1,13 +1,13 @@
 :root {
-    --primary: #4f46e5;
-    --primary-hover: #4338ca;
-    --accent: #10b981;
-    --dark: #0f172a;
+    --primary: #6366f1;
+    --primary-hover: #4f46e5;
+    --accent: #f59e0b; /* Warna Emas Gaming */
+    --dark: #090d16;
     --light: #f8fafc;
     --gray: #64748b;
     --gray-light: #f1f5f9;
     --border: #e2e8f0;
-    --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+    --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08);
     --transition: all 0.3s ease;
 }
 
@@ -24,7 +24,7 @@ html {
 
 body {
     background-color: #ffffff;
-    color: var(--dark);
+    color: #1e293b;
     line-height: 1.6;
 }
 
@@ -35,20 +35,24 @@ body {
     padding: 0 20px;
 }
 
-section {
+.section-padding {
     padding: 90px 0;
 }
 
-/* HEADER */
+.bg-light {
+    background-color: var(--light);
+}
+
+/* HEADER / NAVBAR */
 header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(9, 13, 22, 0.95);
     backdrop-filter: blur(10px);
     z-index: 1000;
-    border-bottom: 1px solid var(--border);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 header .container {
@@ -61,12 +65,13 @@ header .container {
 .logo {
     font-size: 24px;
     font-weight: 800;
-    color: var(--dark);
+    color: #fff;
     text-decoration: none;
+    letter-spacing: 1px;
 }
 
 .logo span {
-    color: var(--primary);
+    color: var(--accent);
 }
 
 .nav-menu {
@@ -76,36 +81,37 @@ header .container {
 
 .nav-menu a {
     text-decoration: none;
-    color: var(--gray);
+    color: #cbd5e1;
     font-weight: 500;
     transition: var(--transition);
 }
 
 .nav-menu a:hover {
-    color: var(--primary);
+    color: var(--accent);
 }
 
 .btn-cta {
-    background: var(--primary);
+    background: linear-gradient(135deg, #f59e0b, #d97706);
     color: #fff;
     padding: 10px 24px;
     border-radius: 50px;
     text-decoration: none;
-    font-weight: 600;
+    font-weight: 700;
     transition: var(--transition);
-    box-shadow: 0 4px 14px rgba(79, 70, 229, 0.3);
+    box-shadow: 0 4px 14px rgba(245, 158, 11, 0.4);
 }
 
 .btn-cta:hover {
-    background: var(--primary-hover);
     transform: translateY(-2px);
+    opacity: 0.9;
 }
 
-/* HERO */
-#home {
-    padding-top: 160px;
-    padding-bottom: 120px;
-    background: linear-gradient(135deg, #f8fafc 0%, #e0e7ff 100%);
+/* HERO SECTION */
+.hero-section {
+    padding-top: 180px;
+    padding-bottom: 130px;
+    background: linear-gradient(135deg, #090d16 0%, #1e1b4b 100%);
+    color: #fff;
     text-align: center;
 }
 
@@ -116,30 +122,30 @@ header .container {
 
 .badge {
     display: inline-block;
-    background: #e0e7ff;
-    color: var(--primary);
-    padding: 6px 16px;
+    background: rgba(245, 158, 11, 0.15);
+    color: var(--accent);
+    padding: 6px 18px;
     border-radius: 50px;
     font-size: 14px;
     font-weight: 600;
     margin-bottom: 20px;
+    border: 1px solid rgba(245, 158, 11, 0.3);
 }
 
 .hero-content h1 {
-    font-size: 44px;
+    font-size: 46px;
     font-weight: 800;
     line-height: 1.2;
-    color: var(--dark);
     margin-bottom: 20px;
 }
 
 .hero-content h1 span {
-    color: var(--primary);
+    color: var(--accent);
 }
 
 .hero-content p {
     font-size: 18px;
-    color: var(--gray);
+    color: #94a3b8;
     margin-bottom: 40px;
 }
 
@@ -161,13 +167,13 @@ header .container {
 
 .btn-primary:hover {
     background: var(--primary-hover);
-    box-shadow: 0 6px 20px rgba(79, 70, 229, 0.4);
+    box-shadow: 0 6px 20px rgba(99, 102, 241, 0.4);
 }
 
 .btn-secondary {
-    background: #fff;
-    color: var(--dark);
-    border: 1px solid var(--border);
+    background: transparent;
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
     padding: 14px 28px;
     border-radius: 8px;
     text-decoration: none;
@@ -176,7 +182,8 @@ header .container {
 }
 
 .btn-secondary:hover {
-    background: var(--gray-light);
+    background: rgba(255, 255, 255, 0.05);
+    border-color: #fff;
 }
 
 /* SECTION TITLE */
@@ -205,7 +212,11 @@ header .container {
     color: var(--gray);
 }
 
-/* STEPS (CARA BERMAIN) */
+.text-white h2, .text-white p {
+    color: #fff;
+}
+
+/* STEPS GRID */
 .steps-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -243,7 +254,7 @@ header .container {
     font-size: 15px;
 }
 
-/* WINNERS (PEMENANG) */
+/* WINNERS GRID */
 .winner-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -260,7 +271,7 @@ header .container {
 }
 
 .winner-card h4 {
-    color: var(--dark);
+    color: #1e293b;
     font-size: 18px;
     margin-bottom: 8px;
 }
@@ -282,9 +293,10 @@ header .container {
 }
 
 /* ACHIEVEMENTS */
-#achievements {
+.achievement-section {
     background: var(--dark);
     color: #fff;
+    padding: 90px 0;
 }
 
 .achievement-grid {
@@ -297,7 +309,7 @@ header .container {
 .achievement-item h3 {
     font-size: 44px;
     font-weight: 800;
-    color: #fff;
+    color: var(--accent);
     margin-bottom: 5px;
 }
 
@@ -308,7 +320,7 @@ header .container {
 
 /* FOOTER */
 footer {
-    background: #090d16;
+    background: #05070c;
     color: #94a3b8;
     padding: 70px 0 30px 0;
 }
@@ -330,7 +342,7 @@ footer {
 }
 
 .footer-logo span {
-    color: var(--primary);
+    color: var(--accent);
 }
 
 .footer-content p {
@@ -376,4 +388,7 @@ footer {
     .footer-content {
         grid-template-columns: 1fr;
     }
-}
+    .hero-content h1 {
+        font-size: 32px;
+    }
+    }
