@@ -1,32 +1,29 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta name="50803b6b61ed38ff93fd5c3icae1250b48b37792a" content="50803b6b61ed38ff93fd5c3cae1250b48b37792a" />
-<meta name="referrer" content="no-referrer-when-downgrade" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ArcadeVerse - Main Game Kumpul Koin & Hadiah Harian</title>
-    <meta name="description" content="Mainkan ratusan game casual seru, kumpulkan koin emas setiap hari, dan tukarkan dengan hadiah menarik!">
-    <link rel="stylesheet" href="style.css">
-    <!-- FontAwesome untuk ikon modern -->
+    <title>Mythic Reward - Main Game Kumpul Koin & Tukar Saldo</title>
+    
+    <!-- KODE VERIFIKASI ADSTERRA ANDA -->
+    <meta name="50803b6b61ed38ff93fd5c3icae1250b48b37792a" content="50803b6b61ed38ff93fd5c3cae1250b48b37792a" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+
+    <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
-    <!-- TOP HEADER / SALDO KUIS & KOIN -->
+    <!-- TOP HEADER / SALDO KOKOIN -->
     <header class="app-header">
         <div class="container header-container">
             <div class="logo">
-                ARCADE<span>VERSE</span>
+                MYTHIC<span>REWARD</span>
             </div>
             <div class="user-wallet-box">
                 <div class="wallet-balance">
                     <i class="fa-solid fa-coins text-warning"></i>
-                    <span id="coin-counter">12,450</span> <small>Koin</small>
-                </div>
-                <div class="notification-bell">
-                    <i class="fa-solid fa-bell"></i>
-                    <span class="badge-dot"></span>
+                    <span id="user-coins">2,500</span> <small>Koin</small>
                 </div>
             </div>
         </div>
@@ -36,135 +33,139 @@
     <main class="dashboard-main">
         <div class="container">
 
-            <!-- BANNER PROMO / BONUS EVENT -->
+            <!-- BANNER INFORMASI PENARIKAN -->
             <section class="promo-banner">
                 <div class="banner-content">
-                    <span class="tag-badge">🔥 EVENT SPESIAL MINGGU INI</span>
-                    <h2>Bonus Pencapaian Koin<br>Hingga <span>500.000 Koin!</span></h2>
-                    <p>Selesaikan misi game harian dan gandakan koinmu sekarang juga.</p>
-                    <button class="btn-claim-bonus" onclick="alert('Selamat! Anda mendapatkan bonus harian 500 koin.')">Klaim Bonus</button>
+                    <span class="tag-badge">💡 CARA DAPAT DUIT</span>
+                    <h2>Kumpulkan Koin & <span>Tukar Jadi Saldo DANA/OVO</span></h2>
+                    <p>Mainkan game setiap hari, tonton iklan sponsor, kumpulkan minimal 10.000 koin, lalu ajukan penarikan tunai!</p>
                 </div>
             </section>
 
-            <!-- 📌 KOTAK SLOT IKLAN 1 (Tempat Pasang Script Iklan Anda: Adsterra / AdSense) -->
+            <!-- 📌 Kotak Slot Iklan Banner Adsterra Anda -->
             <div class="ad-container" style="margin: 20px 0; text-align: center; background: #1e293b; padding: 15px; border-radius: 12px; border: 1px dashed #475569;">
-                <span style="font-size: 11px; color: #94a3b8; display: block; margin-bottom: 5px;">SPONSOR / IKLAN</span>
-                <!-- TEMPEL KODE SCRIPT IKLAN ANDA DI SINI -->
-                <div style="color: #cbd5e1; font-size: 14px; padding: 10px;">[ Tempat Banner Iklan Banner 320x50 / 728x90 ]</div>
+                <span style="font-size: 11px; color: #94a3b8; display: block; margin-bottom: 5px;">SPONSOR IKLAN</span>
+                <!-- TEMPEL KODE SCRIPT BANNER ADSTERRA ANDA DI BAWAH INI -->
+                <div style="color: #cbd5e1; font-size: 13px; padding: 10px;">
+                    [ Tempel Script Banner Adsterra Di Sini ]
+                </div>
             </div>
 
-            <!-- MENU FITUR HARIAN & MISI -->
+            <!-- MENU UTAMA -->
             <section class="quick-menu-grid">
-                <div class="q-card" onclick="alert('Fitur Check-in harian berhasil! +100 Koin')">
+                <div class="q-card" onclick="dailyCheckIn()">
                     <i class="fa-solid fa-calendar-check"></i>
-                    <span>Check-In</span>
+                    <span>Check-In (+200)</span>
                 </div>
-                <div class="q-card" onclick="alert('Misi harian terbuka! Mainkan game untuk dapat koin.')">
-                    <i class="fa-solid fa-gift"></i>
-                    <span>Misi Koin</span>
+                <div class="q-card" onclick="openWithdrawModal()">
+                    <i class="fa-solid fa-wallet"></i>
+                    <span>Tukar Saldo</span>
                 </div>
-                <div class="q-card" onclick="alert('Membuka Roda Keberuntungan (Spin to Win)!')">
-                    <i class="fa-solid fa-dharmachakra"></i>
-                    <span>Spin Hoki</span>
-                </div>
-                <div class="q-card" onclick="alert('Undang teman untuk dapat komisi koin tambahan!')">
+                <div class="q-card" onclick="alert('Bagikan link referral Anda untuk mendapatkan komisi 500 koin per teman!')">
                     <i class="fa-solid fa-users"></i>
                     <span>Undang Teman</span>
                 </div>
+                <div class="q-card" onclick="alert('Pastikan akun Anda aktif dan tonton iklan untuk membantu admin membayar reward!')">
+                    <i class="fa-solid fa-circle-info"></i>
+                    <span>Aturan</span>
+                </div>
             </section>
 
-            <!-- KATEGORI GAME -->
+            <!-- PILIHAN GAME -->
             <div class="section-heading">
-                <h3>🎮 Game Populer Terbaru</h3>
-                <span class="see-all">Semua (12)</span>
+                <h3>🎮 Pilih Game & Mulai Misi</h3>
             </div>
 
-            <!-- GRID DAFTAR GAME (Bisa Diklik untuk Main / Dapat Koin) -->
             <div class="game-grid">
-                <!-- Game 1 -->
-                <div class="game-card" onclick="playGame('Lucky Cat Slots / Arcade Match')">
+                <div class="game-card" onclick="playGame('Lucky Neko Casual', 100)">
                     <div class="game-thumb" style="background: linear-gradient(135deg, #f59e0b, #ef4444);">
                         <i class="fa-solid fa-cat"></i>
                     </div>
                     <div class="game-info">
                         <h4>Lucky Neko Fun</h4>
-                        <p>Arcade • 1.2k Dimainkan</p>
+                        <p>Hadiah: +100 Koin</p>
                     </div>
                 </div>
-                <!-- Game 2 -->
-                <div class="game-card" onclick="playGame('Mahjong Match Puzzle')">
+                <div class="game-card" onclick="playGame('Mahjong Puzzle', 150)">
                     <div class="game-thumb" style="background: linear-gradient(135deg, #10b981, #059669);">
                         <i class="fa-solid fa-chess-board"></i>
                     </div>
                     <div class="game-info">
-                        <h4>Mahjong Ways Casual</h4>
-                        <p>Puzzle • 3.4k Dimainkan</p>
+                        <h4>Mahjong Ways Fun</h4>
+                        <p>Hadiah: +150 Koin</p>
                     </div>
                 </div>
-                <!-- Game 3 -->
-                <div class="game-card" onclick="playGame('Olympus Gem Match')">
+                <div class="game-card" onclick="playGame('Olympus Gem Match', 200)">
                     <div class="game-thumb" style="background: linear-gradient(135deg, #6366f1, #3b82f6);">
                         <i class="fa-solid fa-bolt"></i>
                     </div>
                     <div class="game-info">
-                        <h4>Gates of Olympus Fun</h4>
-                        <p>Adventure • 5.1k Dimainkan</p>
+                        <h4>Gates of Olympus</h4>
+                        <p>Hadiah: +200 Koin</p>
                     </div>
                 </div>
-                <!-- Game 4 -->
-                <div class="game-card" onclick="playGame('Wild West Shooting')">
+                <div class="game-card" onclick="playGame('Wild West Action', 120)">
                     <div class="game-thumb" style="background: linear-gradient(135deg, #8b5cf6, #ec4899);">
                         <i class="fa-solid fa-hat-cowboy"></i>
                     </div>
                     <div class="game-info">
-                        <h4>Wild Bounty Casual</h4>
-                        <p>Action • 890 Dimainkan</p>
+                        <h4>Wild Bounty Fun</h4>
+                        <p>Hadiah: +120 Koin</p>
                     </div>
                 </div>
-            </div>
-
-            <!-- 📌 KOTAK SLOT IKLAN 2 (Di tengah konten agar pendapatan iklan maksimal) -->
-            <div class="ad-container" style="margin: 30px 0; text-align: center; background: #1e293b; padding: 15px; border-radius: 12px; border: 1px dashed #475569;">
-                <span style="font-size: 11px; color: #94a3b8; display: block; margin-bottom: 5px;">SPONSOR / IKLAN</span>
-                <div style="color: #cbd5e1; font-size: 14px; padding: 15px;">[ Tempat Banner Iklan Native / Pop-under / Display Ads ]</div>
             </div>
 
         </div>
     </main>
 
-    <!-- BOTTOM NAVBAR (Gaya Aplikasi Mobile Game) -->
+    <!-- BOTTOM NAVBAR -->
     <nav class="bottom-nav">
         <a href="#" class="nav-item active">
             <i class="fa-solid fa-house"></i>
             <span>Beranda</span>
         </a>
-        <a href="#" class="nav-item" onclick="alert('Menu Misi Harian')">
-            <i class="fa-solid fa-gamepad"></i>
-            <span>Misi Game</span>
+        <a href="#" class="nav-item" onclick="openWithdrawModal()">
+            <i class="fa-solid fa-money-bill-transfer"></i>
+            <span>Tarik Tunai</span>
         </a>
-        <a href="#" class="nav-item" onclick="alert('Menu Undang Teman')">
-            <i class="fa-solid fa-user-plus"></i>
-            <span>Undang</span>
-        </a>
-        <a href="#" class="nav-item" onclick="alert('Menu Dompet Koin & Tukar Hadiah')">
-            <i class="fa-solid fa-wallet"></i>
-            <span>Dompet</span>
-        </a>
-        <a href="#" class="nav-item" onclick="alert('Profil Pengguna')">
+        <a href="#" class="nav-item" onclick="alert('Menu Akun & Riwayat Penarikan')">
             <i class="fa-solid fa-user"></i>
             <span>Akun</span>
         </a>
     </nav>
 
-    <!-- SCRIPT JAVASCRIPT SEDERHANA -->
+    <!-- SCRIPT SISTEM KOIN & PENARIKAN -->
     <script>
-        function playGame(gameName) {
-            // Simulasi ketika user mengeklik game, koin bertambah dan simulasi iklan/game berjalan
-            let currentCoins = parseInt(document.getElementById('coin-counter').innerText.replace(',', ''));
-            currentCoins += 50; // Tambah 50 koin setiap main game
-            document.getElementById('coin-counter').innerText = currentCoins.toLocaleString();
-            
-            alert("Memuat game: " + gameName + "\n\n(Berhasil mendapatkan +50 Koin dari sesi bermain!)");
+        let userCoins = 2500;
+
+        function updateCoinDisplay() {
+            document.getElementById('user-coins').innerText = userCoins.toLocaleString();
+        }
+
+        function playGame(gameName, reward) {
+            userCoins += reward;
+            updateCoinDisplay();
+            alert("🎮 Berhasil menyelesaikan sesi " + gameName + "!\n\nSelamat, Anda mendapatkan +" + reward + " Koin.");
+        }
+
+        function dailyCheckIn() {
+            userCoins += 200;
+            updateCoinDisplay();
+            alert("✅ Check-in berhasil! Anda mendapatkan +200 Koin.");
+        }
+
+        function openWithdrawModal() {
+            let minWithdraw = 10000;
+            if (userCoins < minWithdraw) {
+                alert("❌ Koin Anda saat ini (" + userCoins + "). Minimal penarikan adalah " + minWithdraw + " Koin. Terus mainkan game dan kumpulkan koinnya!");
+            } else {
+                let nomorDana = prompt("🎉 Selamat! Koin Anda mencukupi untuk penarikan.\n\nMasukkan Nomor WhatsApp / DANA Anda untuk pencairan:");
+                if (nomorDana) {
+                    alert("✅ Permintaan penarikan berhasil dikirim!\nAdmin akan memproses saldo ke nomor: " + nomorDana + "\n\n(Catatan: Saldo dibayarkan dari hasil pendapatan iklan website).");
+                    userCoins -= minWithdraw; // Potong koin
+                    updateCoinDisplay();
+                }
+            }
         }
     </script>
 </body>
